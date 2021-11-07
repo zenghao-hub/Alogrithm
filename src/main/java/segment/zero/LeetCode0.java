@@ -67,4 +67,37 @@ public class LeetCode0 {
 		System.out.println(longestPalindrome("babad"));
 		System.out.println((int) 'a');
 	}
+
+	public String convert(String s, int numRows) {
+		int length = s.length();
+		if (length <= numRows) {
+			return s;
+		}
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < numRows; i++) {
+			int begin = i;
+			int next;
+			boolean flag = true;
+			while (begin < length) {
+				if (flag) {
+					next = begin + 2 * numRows - 2 * (i + 1);
+					flag = false;
+				} else {
+					next = begin + 2 * i;
+					flag = true;
+				}
+				if (next != begin) {
+					sb.append(s.charAt(begin));
+					begin = next;
+				}
+			}
+		}
+		return sb.toString();
+	}
+
+	@Test
+	public void test6() {
+		System.out.println(convert("A", 1));
+		System.out.println((int) 'a');
+	}
 }
