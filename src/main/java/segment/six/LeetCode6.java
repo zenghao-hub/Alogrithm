@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
  * @auhtor: zenghao
  * @date: 2021/11/5
  **/
-public class SegmentSix {
+public class LeetCode6 {
 	public List<String> topKFrequent(String[] words, int k) {
 		Map<String, Integer> map = new HashMap<>();
 		for (String word : words) {
@@ -43,6 +43,6 @@ public class SegmentSix {
 		System.out.println(100);
 	}
 	public static void main(String[] args) {
-		SegmentSix in = new SegmentSix();
+		LeetCode6 in = new LeetCode6();
 	}
 }
